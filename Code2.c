@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "pvolume.c"
 #include "ppow.c"
-using namespace std;
 
 int main()
 {
