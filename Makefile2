@@ -1,0 +1,13 @@
+#plik Makefile2
+Code2: Code2.o libpow.a libvolume.so
+    gcc -o Code2 Code2.o ppow.a libvolume.so
+Code2.o: Code2.c ppow.h pvolume.h
+    gcc -c Code2.c
+ppow.o: ppow.h
+    gcc -c ppow.h
+pvolume.o: pvolume.h
+    gcc -fPIC -c pvolume.h     
+libpow.a: ppow.o
+    ar rs libpow.a square.o pow.o ppow.o
+libvolume.so: pvolume.o
+    gcc -shared -o libvolume.so pvolume.o
